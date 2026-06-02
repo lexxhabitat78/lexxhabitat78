@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lash Beauty Studio | Prenez Rendez-vous</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- VARIABLES DE COULEURS (Facile à changer si besoin) --- */
+        :root {
+            --bg-gradient: linear-gradient(135deg, #fbf7f4 0%, #f3e5d8 100%);
+            --card-bg: rgba(255, 255, 255, 0.75);
+            --text-main: #2b2520;
+            --text-muted: #6e655f;
+            --accent-color: #c5a47e; /* Doré doux brossé */
+            --btn-primary-bg: #1e1a17; /* Bouton noir chic */
+            --btn-primary-text: #ffffff;
+            --shadow-soft: 0 10px 30px rgba(163, 145, 131, 0.15);
+            --font-titles: 'Playfair Display', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* --- STYLE GÉNÉRAL --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-attachment: fixed;
+        }
+
+        /* --- CONTENEUR PRINCIPAL (Effet carte de verre) --- */
+        .container {
+            width: 100%;
+            max-width: 430px;
+            background: var(--card-bg);
+            padding: 35px 24px;
+            border-radius: 24px;
+            box-shadow: var(--shadow-soft);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            text-align: center;
+        }
+
+        /* --- EN-TÊTE PROFIL --- */
+        .profile-header {
+            margin-bottom: 28px;
+        }
+
+        .avatar-container {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 16px auto;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        /* Petit point vert dynamique "Disponible" */
+        .badge-online {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            width: 14px;
+            height: 14px;
+            background-color: #4ade80;
+            border: 2.5px solid #ffffff;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-family: var(--font-titles);
+            font-size: 1.65rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.3px;
+        }
+
+        .subtitle {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(197, 164, 126, 0.12);
+            color: #9c7b56;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* --- BOUTON PRINCIPAL "PRENDRE RDV" (CTA) --- */
+        .cta-section {
+            margin-bottom: 24px;
+        }
+
+        .btn-cta {
+            display: flex;
+            align-items: center;
+            background: var(--btn-primary-bg);
+            color: var(--btn-primary-text);
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(30, 26, 23, 0.25);
+            transition: all 0.25s ease;
+        }
+
+        .btn-cta .icon {
+            font-size: 1.4rem;
+            margin-right: 14px;
+        }
+
+        .btn-cta .btn-text {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .btn-cta .btn-text strong {
+            display: block;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-cta .btn-text small {
+            display: block;
+            font-size: 0.78rem;
+            opacity: 0.75;
+            margin-top: 1px;
+        }
+
+        .btn-cta .arrow {
+            font-size: 1.1rem;
+            transition: transform 0.25s ease;
+            opacity: 0.8;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(30, 26, 23, 0.35);
+            background: #000000;
+        }
+
+        .btn-cta:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        /* --- LISTE DES LIENS SECONDAIRES --- */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 14px 18px;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid rgba(226, 215, 205, 0.6);
+            transition: all 0.2s ease;
+        }
+
+        .link-item .link-icon {
+            font-size: 1.2rem;
+            margin-right: 14px;
+            width: 24px;
+            text-align: center;
+        }
+
+        .link-item .link-title {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .link-item:hover {
+            background: #faf8f6;
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(197, 164, 126, 0.1);
+        }
+
+        /* --- PIED DE PAGE & ICÔNES --- */
+        .social-footer {
+            border-top: 1px solid rgba(226, 215, 205, 0.5);
+            padding-top: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .social-icons a {
+            color: var(--text-muted);
+            transition: color 0.2s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="profile-header">
+            <div class="avatar-container">
+                <img class="profile-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=250&q=80" alt="Lash Beauty Studio">
+                <span class="badge-online"></span>
+            </div>
+            <h1>Lash Beauty Studio</h1>
+            <p class="subtitle">✨ Sublimatrice de Regard & Technicienne Certifiée</p>
+            
+            <div class="location-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>Paris et Île-de-France</span>
+            </div>
+        </header>
+
+        <section class="cta-section">
+            <a href="https://www.planity.com" target="_blank" class="btn-cta">
+                <span class="icon">🗓️</span>
+                <span class="btn-text">
+                    <strong>PRENDRE RENDEZ-VOUS</strong>
+                    <small>Voir les disponibilités en temps réel</small>
+                </span>
+                <span class="arrow">→</span>
+            </a>
+        </section>
+
+        <main class="links-container">
+            <a href="#" target="_blank" class="link-item">
+                <span class="link-icon">📜</span>
+                <span class="link-title">Tarifs & Prestations</span>
+            </a>
+            
+            <a href="https://instagram.com" target="_blank" class="link-item">
+                <span class="link-icon">📸</span>
+                <span class="link-title">Mon Portfolio Instagram</span>
+            </a>
+            
+            <a href="https://wa.me/33600000000" target="_blank" class="link-item">
+                <span class="link-icon">💬</span>
+                <span class="link-title">Me contacter sur WhatsApp</span>
+            </a>
+            
+            <a href="#" target="_blank" class="link-item">
+                <span class="link-icon">⭐</span>
+                <span class="link-title">Avis de mes Clientes</span>
+            </a>
+        </main>
+
+        <footer class="social-footer">
+            <div class="social-icons">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="https://tiktok.com" target="_blank" aria-label="TikTok">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+                </a>
+            </div>
+            <p class="copyright">© 2026 Lash Beauty Studio. Tous droits réservés.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
