@@ -3,29 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiss Glam Studio | Lash & Aesthetics</title>
+    <title>Wiss Glam Studio | L'Art du Regard</title>
     
-    <!-- Polices Modernes, Fraîches et Commerciales -->
+    <!-- Duo de Polices Harmonieux & Haut de Gamme -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- CONFIGURATION DESIGN SYSTEM GIRLY & LUMINEUX --- */
+        /* --- DESIGN SYSTEM HARMONIEUX --- */
         :root {
-            --bg-light: #ffffff;
-            --bg-cream: #fff9f8;
-            --text-dark: #1e1e24;
-            --text-muted: #6b6b75;
-            --accent-pink: #ff85a2;
-            --accent-pink-hover: #f06587;
-            --accent-gold: #cca43b;
-            --font-title: 'Syne', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            --bg-pure: #ffffff;
+            --bg-blush: #fff6f6;
+            --text-dark: #111111;
+            --text-muted: #666666;
+            --glam-pink: #ff7b99;
+            --glam-pink-hover: #f35d7f;
+            --font-display: 'Playfair Display', serif;
+            --font-clean: 'Montserrat', sans-serif;
+            --transition-fluid: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* --- STYLES EN PLEIN ÉCRAN --- */
+        /* --- RESET & FORMATTING PLEIN ÉCRAN --- */
         * {
             margin: 0;
             padding: 0;
@@ -34,201 +33,204 @@
         }
 
         body {
-            background-color: var(--bg-light);
+            background-color: var(--bg-pure);
             color: var(--text-dark);
-            font-family: var(--font-body);
+            font-family: var(--font-clean);
             overflow-x: hidden;
             width: 100vw;
+            letter-spacing: -0.2px;
         }
 
-        /* --- INTRO FLASH (PRELOADER PLUS COURT) --- */
+        /* --- INTRO CHIC RAPIDE (1.2s) --- */
         #preloader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
-            background-color: var(--bg-cream);
+            background-color: var(--bg-blush);
             z-index: 99999;
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.4s ease-out;
         }
 
         .preloader-title {
-            font-family: var(--font-title);
-            font-size: clamp(2rem, 6vw, 4rem);
-            color: var(--accent-pink);
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            color: var(--glam-pink);
+            font-weight: 700;
+            font-style: italic;
             opacity: 0;
-            transform: scale(0.95);
-            animation: fastReveal 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            transform: scale(0.97);
+            animation: elegantReveal 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
 
-        @keyframes fastReveal {
-            0% { opacity: 0; transform: scale(0.95); filter: blur(4px); }
+        @keyframes elegantReveal {
+            0% { opacity: 0; transform: scale(0.97); filter: blur(3px); }
             30% { opacity: 1; filter: blur(0); transform: scale(1); }
-            80% { opacity: 1; }
-            100% { opacity: 0; transform: scale(1.03); }
+            85% { opacity: 1; }
+            100% { opacity: 0; transform: scale(1.01); }
         }
 
-        /* --- BARRE DE NAVIGATION MODERNE --- */
+        /* --- NAV BAR FLUIDE & MINI-ÉPURÉE --- */
         .navbar-full {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 20px 60px;
+            padding: 25px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 999;
             background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 133, 162, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 123, 153, 0.08);
         }
 
         .nav-brand {
-            font-family: var(--font-title);
-            font-size: 1.4rem;
-            font-weight: 800;
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 700;
             color: var(--text-dark);
-            letter-spacing: -0.5px;
+            cursor: pointer;
+            transition: var(--transition-fluid);
         }
 
-        .nav-brand span {
-            color: var(--accent-pink);
+        .nav-brand i {
+            font-weight: 400;
+            font-style: italic;
+            color: var(--glam-pink);
+        }
+
+        .nav-brand:hover {
+            transform: translateY(-1px);
+            opacity: 0.8;
         }
 
         .nav-menu {
             display: flex;
-            gap: 35px;
+            gap: 40px;
         }
 
         .nav-item {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 600;
             color: var(--text-muted);
             text-decoration: none;
             cursor: pointer;
-            transition: var(--transition-smooth);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition-fluid);
         }
 
         .nav-item:hover, .nav-item.active-link {
-            color: var(--accent-pink);
+            color: var(--glam-pink);
         }
 
-        /* --- CONTENEURS DE NAVIGATION SPA --- */
+        /* --- ROUTAGE INSTANTANÉ PANNEAUX --- */
         .panel-view {
             display: none;
             width: 100%;
             min-height: 100vh;
             padding-top: 90px;
-            animation: panelSlideUp 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation: panelFadeIn 0.5s ease-out forwards;
         }
 
         .panel-view.active-panel {
             display: block;
         }
 
-        @keyframes panelSlideUp {
-            from { opacity: 0; transform: translateY(15px); }
+        @keyframes panelFadeIn {
+            from { opacity: 0; transform: translateY(5px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- GRAND ACCUEIL LUMINEUX --- */
+        /* --- ACCUEIL IMMERSIF FULL-WIDTH --- */
         .hero-fullscreen {
             height: calc(100vh - 90px);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 0 8vw;
-            background: radial-gradient(circle at 80% 20%, rgba(255, 230, 235, 0.5) 0%, rgba(255, 255, 255, 0) 60%);
+            padding: 0 10vw;
+            background: radial-gradient(circle at 85% 35%, rgba(255, 123, 153, 0.15) 0%, rgba(255, 255, 255, 0) 60%);
         }
 
         .hero-overhead {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--accent-pink);
-            font-weight: 700;
-            margin-bottom: 15px;
+            letter-spacing: 4px;
+            color: var(--glam-pink);
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
         .hero-title-main {
-            font-family: var(--font-title);
-            font-size: clamp(2.8rem, 7vw, 5.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            max-width: 1100px;
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            max-width: 1050px;
             color: var(--text-dark);
-            margin-bottom: 35px;
-            letter-spacing: -1px;
+            margin-bottom: 40px;
         }
 
-        .hero-title-main span {
-            background: linear-gradient(to right, var(--accent-pink), #ff5c8a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .hero-title-main i {
+            font-weight: 400;
+            font-style: italic;
+            color: var(--glam-pink);
         }
 
-        /* --- BOUTONS COMMERCIAUX POP --- */
-        .btn-glam {
+        /* --- BOUTONS PRO ET HARMONIEUX --- */
+        .btn-action {
             display: inline-block;
-            background-color: var(--accent-pink);
+            background-color: var(--glam-pink);
             color: white;
             text-decoration: none;
-            padding: 20px 45px;
-            font-size: 0.9rem;
-            font-weight: 700;
+            padding: 18px 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             border: none;
-            border-radius: 50px; /* Effet moderne arrondi */
-            box-shadow: 0 10px 25px rgba(255, 133, 162, 0.3);
-            transition: var(--transition-smooth);
+            border-radius: 4px; /* Un angle légèrement arrondi mais pro, pas de "gros boudin" */
+            transition: var(--transition-fluid);
             cursor: pointer;
         }
 
-        .btn-glam:hover {
-            background-color: var(--accent-pink-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(255, 133, 162, 0.4);
+        .btn-action:hover {
+            background-color: var(--glam-pink-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 123, 153, 0.2);
         }
 
-        .btn-glam-outline {
+        .btn-action-outline {
             background-color: transparent;
             color: var(--text-dark);
-            border: 2px solid var(--text-dark);
-            box-shadow: none;
+            border: 1px solid var(--text-dark);
             margin-left: 20px;
         }
 
-        .btn-glam-outline:hover {
+        .btn-action-outline:hover {
             background-color: var(--text-dark);
             color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: none;
         }
 
-        /* --- SECTION PRESTATIONS MODERNES & PRO --- */
-        .showcase-fullscreen-container {
-            width: 100%;
-        }
-
+        /* --- PRESTATIONS HARMONIEUSES & GRANDE LARGEUR --- */
         .showcase-row {
             width: 100%;
             display: flex;
             min-height: 75vh;
-            background-color: var(--bg-light);
+            background-color: var(--bg-pure);
         }
 
         .showcase-row:nth-child(even) {
             flex-direction: row-reverse;
-            background-color: var(--bg-cream);
+            background-color: var(--bg-blush);
         }
 
         .showcase-image-half {
@@ -241,93 +243,92 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 1.2s ease;
+            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .showcase-row:hover .showcase-image-half img {
-            transform: scale(1.04);
+            transform: scale(1.03);
         }
 
-        /* Badges Commerciaux */
-        .commercial-tag {
+        .commercial-badge {
             position: absolute;
             top: 30px;
             left: 30px;
             background-color: var(--text-dark);
             color: white;
-            padding: 8px 16px;
-            font-size: 0.75rem;
-            font-weight: 700;
+            padding: 6px 14px;
+            font-size: 0.7rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 4px;
+            letter-spacing: 1.5px;
+            border-radius: 2px;
         }
 
-        .commercial-tag.trend {
-            background-color: var(--accent-pink);
+        .commercial-badge.highlight {
+            background-color: var(--glam-pink);
         }
 
         .showcase-content-half {
             width: 50%;
-            padding: 60px 7vw;
+            padding: 60px 8vw;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .price-flex {
+        .price-align {
             display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 15px;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
         }
 
         .showcase-item-title {
-            font-family: var(--font-title);
-            font-size: 2.8rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            font-weight: 700;
             color: var(--text-dark);
         }
 
         .showcase-price {
-            font-family: var(--font-title);
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent-pink);
+            font-family: var(--font-clean);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--glam-pink);
         }
 
         .showcase-item-desc {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
             line-height: 1.7;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            font-weight: 400;
         }
 
-        /* Listes d'avantages faciles à lire */
         .features-list {
             list-style: none;
             margin-bottom: 35px;
         }
 
         .features-list li {
-            font-size: 0.95rem;
+            font-size: 0.88rem;
             font-weight: 500;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             color: var(--text-dark);
         }
 
         .features-list li::before {
-            content: "✓";
-            color: var(--accent-pink);
+            content: "—";
+            color: var(--glam-pink);
             font-weight: 700;
             margin-right: 12px;
-            font-size: 1.1rem;
         }
 
-        /* --- SECTION DE RÉSERVATION --- */
+        /* --- BLOC RÉSERVATION --- */
         .booking-banner-full {
             width: 100%;
             min-height: 75vh;
@@ -337,105 +338,104 @@
             align-items: center;
             text-align: center;
             padding: 60px 24px;
-            background: linear-gradient(180deg, var(--bg-cream) 0%, #ffffff 100%);
+            background: linear-gradient(180deg, var(--bg-blush) 0%, #ffffff 100%);
         }
 
         .booking-headline {
-            font-family: var(--font-title);
-            font-size: 3.5rem;
-            font-weight: 800;
+            font-family: var(--font-display);
+            font-size: 3.2rem;
+            font-weight: 700;
             margin-bottom: 20px;
-            letter-spacing: -1px;
         }
 
         .booking-rules-text {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--text-muted);
-            max-width: 650px;
+            max-width: 600px;
             line-height: 1.8;
             margin-bottom: 40px;
         }
 
         .booking-rules-text strong {
             color: var(--text-dark);
-            background: linear-gradient(to bottom, transparent 60%, rgba(255, 133, 162, 0.2) 40%);
+            font-weight: 600;
         }
 
-        /* --- MODULE LOUNGE PRIVÉ --- */
+        /* --- ACCÈS CODE PRIVÉ VIP --- */
         .lounge-auth-box {
-            max-width: 600px;
-            margin: 8vh auto;
-            background-color: var(--bg-cream);
+            max-width: 550px;
+            margin: 10vh auto;
+            background-color: var(--bg-blush);
             padding: 50px 40px;
             text-align: center;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 133, 162, 0.15);
-            box-shadow: 0 20px 40px rgba(255, 133, 162, 0.04);
+            border-radius: 4px;
+            border: 1px solid rgba(255, 123, 153, 0.1);
         }
 
         .lounge-title {
-            font-family: var(--font-title);
+            font-family: var(--font-display);
             font-size: 2rem;
-            font-weight: 800;
+            font-weight: 700;
             margin-bottom: 15px;
         }
 
         .lounge-input {
             width: 100%;
-            padding: 20px;
+            padding: 18px;
             background-color: #ffffff;
-            border: 2px solid rgba(255, 133, 162, 0.2);
-            border-radius: 50px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 4px;
             color: var(--text-dark);
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 2px;
+            font-family: var(--font-clean);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 4px;
             text-align: center;
             margin-bottom: 25px;
             outline: none;
-            transition: var(--transition-smooth);
+            transition: var(--transition-fluid);
         }
 
         .lounge-input:focus {
-            border-color: var(--accent-pink);
+            border-color: var(--glam-pink);
         }
 
         .lounge-unlocked-area {
             display: none;
             margin-top: 35px;
             padding-top: 35px;
-            border-top: 2px dashed rgba(255, 133, 162, 0.2);
-            animation: fadeInLounge 0.5s ease forwards;
+            border-top: 1px dashed rgba(255, 123, 153, 0.3);
+            animation: fadeInLounge 0.5s ease-out forwards;
         }
 
         @keyframes fadeInLounge { from { opacity: 0; } to { opacity: 1; } }
 
-        /* --- RESPONSIVE MOBILE SANS PERTE DE LARGEUR --- */
+        /* --- SÉCURITÉ RESPONSIVE MULTI-ÉCRANS --- */
         @media(max-width: 992px) {
             .navbar-full { padding: 15px 24px; }
-            .nav-menu { gap: 15px; }
+            .nav-menu { gap: 20px; }
             .hero-fullscreen { padding: 0 24px; }
             .showcase-row, .showcase-row:nth-child(even) { flex-direction: column; }
             .showcase-image-half, .showcase-content-half { width: 100%; }
             .showcase-image-half { height: 350px; }
             .showcase-content-half { padding: 40px 24px; }
-            .btn-glam-outline { margin-left: 0; margin-top: 15px; width: 100%; text-align: center; }
-            .btn-glam { width: 100%; text-align: center; }
-            .booking-headline { font-size: 2.5rem; }
+            .price-align { flex-direction: column; gap: 5px; }
+            .btn-action-outline { margin-left: 0; margin-top: 15px; width: 100%; text-align: center; }
+            .btn-action { width: 100%; text-align: center; }
+            .booking-headline { font-size: 2.3rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- RIDEAU FLASH RAPIDE DE DÉMARRAGE -->
+    <!-- RIDEAU COMPACT ÉLÉGANT -->
     <div id="preloader">
         <h1 class="preloader-title">Wiss Glam Studio</h1>
     </div>
 
-    <!-- BARRE DE NAVIGATION COMMERCIALE -->
+    <!-- NAVIGATION BAR HAUT DE GAMME -->
     <nav class="navbar-full">
-        <div class="nav-brand">WISS GLAM<span>.</span></div>
+        <div class="nav-brand" onclick="document.querySelector('[onclick*=\'panel-home\']').click()">Wiss Glam <i>Studio</i></div>
         <div class="nav-menu">
             <span class="nav-item active-link" onclick="changePanel('panel-home', this)">Studio</span>
             <span class="nav-item" onclick="changePanel('panel-catalog', this)">Prestations</span>
@@ -444,19 +444,19 @@
         </div>
     </nav>
 
-    <!-- ================= PANNEAU 1 : ACCUEIL HERO LUMINEUX ================= -->
+    <!-- ================= ACCUEIL IMMERSIF ================= -->
     <div id="panel-home" class="panel-view active-panel">
         <section class="hero-fullscreen">
-            <span class="hero-overhead">Your Lash Premium Studio</span>
-            <h2 class="hero-title-main">Révélez l'intensité de votre regard. Des poses <span>propres, denses et sur-mesure</span>.</h2>
+            <span class="hero-overhead">L'art des cils sur-mesure</span>
+            <h2 class="hero-title-main">Sublimez l'intensité de votre regard. Des poses <i>impeccables</i>, denses et adaptées à vos yeux.</h2>
             <div>
-                <button class="btn-glam" onclick="document.querySelector('[onclick*=\'panel-catalog\']').click()">Voir nos poses</button>
-                <button class="btn-glam btn-glam-outline" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Prendre Rendez-vous</button>
+                <button class="btn-action" onclick="document.querySelector('[onclick*=\'panel-catalog\']').click()">Découvrir la carte</button>
+                <button class="btn-action btn-action-outline" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Prendre Rendez-vous</button>
             </div>
         </section>
     </div>
 
-    <!-- ================= PANNEAU 2 : PRESTATIONS FACILES & COMMERCIALES ================= -->
+    <!-- ================= CATALOGUE COMMERCIAL HARMONIEUX ================= -->
     <div id="panel-catalog" class="panel-view">
         <div class="showcase-fullscreen-container">
             
@@ -464,20 +464,20 @@
             <div class="showcase-row">
                 <div class="showcase-image-half">
                     <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1200&q=80" alt="Cil à Cil">
-                    <div class="commercial-tag">Le Classique</div>
+                    <div class="commercial-badge">Le Classique</div>
                 </div>
                 <div class="showcase-content-half">
-                    <div class="price-flex">
+                    <div class="price-align">
                         <h3 class="showcase-item-title">Cil à Cil</h3>
                         <span class="showcase-price">50 €</span>
                     </div>
-                    <p class="showcase-item-desc">Une extension de soie posée méticuleusement sur chaque cil naturel. Parfait pour un effet mascara impeccable au quotidien sans abîmer vos cils.</p>
+                    <p class="showcase-item-desc">Une seule extension de soie fixée méticuleusement sur chaque cil naturel. C'est l'option idéale pour un effet mascara parfait, soigné et ultra-naturel tous les matins au réveil.</p>
                     <ul class="features-list">
-                        <li>Rendu naturel & élégant</li>
-                        <li>Idéal pour une première pose</li>
-                        <li>Tenue optimale de 3 à 4 semaines</li>
+                        <li>Rendu propre, léger et élégant</li>
+                        <li>Respect absolu de vos cils naturels</li>
+                        <li>Rétention longue durée (3 à 4 semaines)</li>
                     </ul>
-                    <button class="btn-glam" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Choisir cette pose</button>
+                    <button class="btn-action" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Sélectionner cette pose</button>
                 </div>
             </div>
 
@@ -485,20 +485,20 @@
             <div class="showcase-row">
                 <div class="showcase-image-half">
                     <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80" alt="Wispy">
-                    <div class="commercial-tag trend">Best-Seller</div>
+                    <div class="commercial-badge highlight">Le Best-Seller</div>
                 </div>
                 <div class="showcase-content-half">
-                    <div class="price-flex">
+                    <div class="price-align">
                         <h3 class="showcase-item-title">Le Wispy</h3>
                         <span class="showcase-price">50 €</span>
                     </div>
-                    <p class="showcase-item-desc">L'effet Kim K par excellence. On joue sur les longueurs et des pointes texturées pour un style destructuré hyper tendance et ultra volumineux.</p>
+                    <p class="showcase-item-desc">L'effet star asymétrique inspiré de Kim K. Nous jouons sur des variations rythmées de longueurs et des pointes denses pour donner un effet déstructuré, texturé et volumineux.</p>
                     <ul class="features-list">
-                        <li>Effet défilé de mode / instagram</li>
-                        <li>Regard ultra-stylisé et vivant</li>
-                        <li>S'adapte à toutes les formes d'yeux</li>
+                        <li>Effet texturé ultra tendance</li>
+                        <li>Met en valeur toutes les formes d'yeux</li>
+                        <li>Rendu dynamique qui accroche la lumière</li>
                     </ul>
-                    <button class="btn-glam" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Choisir cette pose</button>
+                    <button class="btn-action" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Sélectionner cette pose</button>
                 </div>
             </div>
 
@@ -506,20 +506,20 @@
             <div class="showcase-row">
                 <div class="showcase-image-half">
                     <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1200&q=80" alt="Volume Russe">
-                    <div class="commercial-tag">Intense</div>
+                    <div class="commercial-badge">Intensité</div>
                 </div>
                 <div class="showcase-content-half">
-                    <div class="price-flex">
+                    <div class="price-align">
                         <h3 class="showcase-item-title">Volume Russe</h3>
                         <span class="showcase-price">50 €</span>
                     </div>
-                    <p class="showcase-item-desc">Des bouquets de cils faits main ultra-légers pour une densité noire et profonde. Un effet fourni, velouté et glamour sans aucun paquet.</p>
+                    <p class="showcase-item-desc">Création et pose de bouquets faits main extrêmement fins et légers. Donne une superbe densité noir mat, un effet velouté et dessine une ligne d'eyeliner naturelle.</p>
                     <ul class="features-list">
-                        <li>Densité maximale & volume noir</li>
-                        <li>Cils ultra-légers en soie premium</li>
-                        <li>Idéal pour combler les cils clairsemés</li>
+                        <li>Volume glamour et ultra-fourni</li>
+                        <li>Fini noir intense sans effet de lourdeur</li>
+                        <li>Parfait pour les cils naturellement clairsemés</li>
                     </ul>
-                    <button class="btn-glam" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Choisir cette pose</button>
+                    <button class="btn-action" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Sélectionner cette pose</button>
                 </div>
             </div>
 
@@ -527,20 +527,20 @@
             <div class="showcase-row">
                 <div class="showcase-image-half">
                     <img src="https://images.unsplash.com/photo-1515688594390-b649af70d282?auto=format&fit=crop&w=1200&q=80" alt="Wet Look">
-                    <div class="commercial-tag trend">Nouveau</div>
+                    <div class="commercial-badge highlight">Nouveauté</div>
                 </div>
                 <div class="showcase-content-half">
-                    <div class="price-flex">
+                    <div class="price-align">
                         <h3 class="showcase-item-title">Wet Look</h3>
                         <span class="showcase-price">50 €</span>
                     </div>
-                    <p class="showcase-item-desc">Le rendu tendance "cils mouillés". Des bouquets fermés qui imitent la géométrie et la brillance des cils texturés juste après la douche.</p>
+                    <p class="showcase-item-desc">Ce design moderne imite parfaitement la brillance et le tracé graphique de cils mouillés grâce à des bouquets spécifiquement scellés. Un look frais, pointu et très audacieux.</p>
                     <ul class="features-list">
-                        <li>Look frais, brillant et moderne</li>
-                        <li>Pointe d'originalité unique</li>
-                        <li>Effet très texturé</li>
+                        <li>Effet glossy, original et graphique</li>
+                        <li>Parfait pour bousculer votre routine beauté</li>
+                        <li>Une texture unique très plébiscitée</li>
                     </ul>
-                    <button class="btn-glam" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Choisir cette pose</button>
+                    <button class="btn-action" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Sélectionner cette pose</button>
                 </div>
             </div>
 
@@ -548,73 +548,73 @@
             <div class="showcase-row">
                 <div class="showcase-image-half">
                     <img src="https://images.unsplash.com/photo-1632345031435-8797b2d58045?auto=format&fit=crop&w=1200&q=80" alt="Fox Eye">
-                    <div class="commercial-tag">Lift</div>
+                    <div class="commercial-badge">Lifting Optique</div>
                 </div>
                 <div class="showcase-content-half">
-                    <div class="price-flex">
+                    <div class="price-align">
                         <h3 class="showcase-item-title">Fox Eye</h3>
                         <span class="showcase-price">50 €</span>
                     </div>
-                    <p class="showcase-item-desc">Une pose étirée vers l'extérieur pour lifter le coin de l'œil. C'est la technique secrète pour obtenir un regard félin irrésistible.</p>
+                    <p class="showcase-item-desc">Une architecture fluide qui concentre les longueurs et l'orientation des extensions vers le coin externe de l'œil pour étirer horizontalement votre regard de façon féline.</p>
                     <ul class="features-list">
-                        <li>Effet lifting immédiat du regard</li>
-                        <li>Idéal pour les yeux ronds ou tombants</li>
-                        <li>Rendu étiré ultra-sensuel</li>
+                        <li>Effet lifting et œil de biche immédiat</li>
+                        <li>Idéal pour restructurer les yeux ronds ou tombants</li>
+                        <li>Rendu étiré sensuel et sophistiqué</li>
                     </ul>
-                    <button class="btn-glam" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Choisir cette pose</button>
+                    <button class="btn-action" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Sélectionner cette pose</button>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <!-- ================= PANNEAU 3 : RESERVATION SIMPLE & EN AVANT ================= -->
+    <!-- ================= PROTOCOLE RÉSERVATION CLEAR ================= -->
     <div id="panel-booking" class="panel-view">
         <section class="booking-banner-full">
-            <h3 class="booking-headline">Réservez votre Instant Glam</h3>
+            <h3 class="booking-headline">Réserver un Créneau</h3>
             <p class="booking-rules-text">
-                Toutes nos poses signatures sont au prix unique de <strong>50 €</strong>.<br><br>
-                Pour bloquer votre moment au studio, un acompte de <strong>20 €</strong> est demandé lors de la réservation en ligne. Le solde de <strong>30 €</strong> sera à régler directement sur place le jour J.
+                Toutes les créations exclusives du studio sont fixées au tarif de <strong>50 €</strong>.<br><br>
+                Pour bloquer votre moment, un acompte obligatoire de <strong>20 €</strong> est requis lors de la réservation sur notre interface sécurisée. Les <strong>30 €</strong> restants seront réglés au studio le jour de votre rendez-vous.
             </p>
-            <a href="https://www.planity.com" target="_blank" class="btn-glam">Choisir mon créneau maintenant</a>
+            <a href="https://www.planity.com" target="_blank" class="btn-action">Choisir mon rendez-vous</a>
         </section>
     </div>
 
-    <!-- ================= PANNEAU 4 : ACCÈS CODE SECRET VIP ================= -->
+    <!-- ================= ESPACE EXCLUSIF CODE PRIVÉ ================= -->
     <div id="panel-vip" class="panel-view">
         <div class="lounge-auth-box">
-            <h3 class="lounge-title">Espace Membres</h3>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 25px;">Entrez votre code privilège pour débloquer vos cadeaux du mois.</p>
+            <h3 class="lounge-title">Espace Privé</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 25px; letter-spacing: 0.5px;">Saisissez votre code privilège pour afficher vos avantages.</p>
             
             <input type="password" id="loungeKey" class="lounge-input" placeholder="CODE SECRET">
-            <button class="btn-glam" style="width: 100%;" onclick="unlockLounge()">Vérifier le code</button>
+            <button class="btn-action" style="width: 100%;" onclick="unlockLounge()">Valider mon accès</button>
 
-            <!-- Contenu débloqué -->
+            <!-- Zone Privilège Révélée -->
             <div id="loungeSecretArea" class="lounge-unlocked-area">
-                <h4 style="font-family: var(--font-title); font-size: 1.5rem; margin-bottom: 10px; color: var(--accent-pink);">Code Validé ! Accès VIP 🌟</h4>
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Utilisez ce code lors de votre prochain passage :</p>
-                <div style="background-color: #ffffff; padding: 18px; border: 2px solid var(--accent-pink); border-radius: 12px; font-weight: 800; letter-spacing: 2px; font-size: 1.1rem; color: var(--text-dark);">
-                    GLAMVIP5
+                <h4 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 10px; color: var(--glam-pink); font-style: italic;">Accès Membre Confirmé</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Profitez de votre avantage exclusif pour votre prochain passage :</p>
+                <div style="background-color: #ffffff; padding: 18px; border: 1px dashed var(--glam-pink); border-radius: 4px; font-weight: 700; letter-spacing: 2px; font-size: 1.1rem; color: var(--text-dark);">
+                    CODE : GLAMVIP5
                 </div>
-                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 15px; font-style: italic;">Vous êtes également sur notre liste prioritaire pour les désistements.</p>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 15px; font-style: italic;">Votre profil est placé en priorité absolue sur notre liste d'attente en cas de désistement.</p>
             </div>
         </div>
     </div>
 
-    <!-- LOGIQUE LOGICIELLE (SPA & UTILS) -->
+    <!-- SCRIPT ARCHITECTURE LOGICIELLE -->
     <script>
-        // Fin rapide de l'animation d'introduction (1.4 seconde)
+        // Masquage fluide de l'intro après 1.2s
         window.addEventListener('DOMContentLoaded', () => {
             const preloader = document.getElementById('preloader');
             setTimeout(() => {
                 preloader.style.opacity = '0';
                 setTimeout(() => {
                     preloader.style.display = 'none';
-                }, 500); 
-            }, 1400); 
+                }, 400); 
+            }, 1200); 
         });
 
-        // Navigation interne (Moteur SPA)
+        // Gestion de la navigation instantanée par onglet (SPA)
         function changePanel(panelId, currentElement) {
             const panels = document.querySelectorAll('.panel-view');
             panels.forEach(p => p.classList.remove('active-panel'));
@@ -630,7 +630,7 @@
             currentElement.classList.add('active-link');
         }
 
-        // Système de clé secrète VIP (LASHQUEEN12)
+        // Déverrouillage code privé (LASHQUEEN12)
         function unlockLounge() {
             const keyValue = document.getElementById('loungeKey').value;
             const secretContainer = document.getElementById('loungeSecretArea');
@@ -638,7 +638,7 @@
             if (keyValue.trim().toUpperCase() === "LASHQUEEN12") {
                 secretContainer.style.display = "block";
             } else {
-                alert("Code secret incorrect.");
+                alert("Code non valide.");
                 secretContainer.style.display = "none";
             }
         }
