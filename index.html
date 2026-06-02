@@ -3,32 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lash Room Signature | Premium Bio Link</title>
+    <title>Wiss Glam Studio | L'Art du Regard sur Mesure</title>
     
-    <!-- Polices Girly & Glamour -->
+    <!-- Google Fonts Premium & Éditoriales -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- SYSTÈME DE DESIGN ULTRA GIRLY --- */
+        /* --- DESIGN SYSTEM : WISS GLAM STUDIO --- */
         :root {
-            --pink-bg: linear-gradient(135deg, #ffeef1 0%, #ffd3da 100%);
-            --card-glass: rgba(255, 255, 255, 0.85);
-            --hot-pink: #ff6b8b;
-            --soft-pink: #ffb3c1;
-            --text-main: #4a3538;
-            --text-muted: #8a6f73;
-            --gold: #dfb76c;
-            --white: #ffffff;
-            --radius-main: 24px;
-            --shadow-girly: 0 15px 30px rgba(255, 107, 139, 0.2);
-            --font-fancy: 'Playfair Display', serif;
-            --font-round: 'Comfortaa', cursive;
-            --font-base: 'Poppins', sans-serif;
+            --color-bg: #fdfaf9;
+            --color-nude: #f4e6e4;
+            --color-pink-accent: #e8c5c0;
+            --color-dark: #1a1a1a;
+            --color-muted: #666666;
+            --color-white: #ffffff;
+            --font-editorial: 'Cormorant Garamond', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --transition-chic: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* --- RESET & ANIMATIONS DE FOND --- */
+        /* --- RESET & GLOBAL APP --- */
         * {
             margin: 0;
             padding: 0;
@@ -37,554 +33,493 @@
         }
 
         body {
-            background: var(--pink-bg);
-            color: var(--text-main);
-            font-family: var(--font-base);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            background-color: var(--color-bg);
+            color: var(--color-dark);
+            font-family: var(--font-sans);
+            line-height: 1.6;
             overflow-x: hidden;
-            position: relative;
         }
 
-        /* Effet paillettes scintillantes en arrière-plan */
-        body::before {
-            content: "✨";
-            position: fixed;
-            font-size: 14px;
-            opacity: 0.3;
-            animation: floatSparkles 6s infinite ease-in-out;
-            top: 10%; left: 10%;
-        }
-        body::after {
-            content: "🌸 ✨ 💫";
-            position: fixed;
-            font-size: 12px;
-            opacity: 0.25;
-            animation: floatSparkles 8s infinite ease-in-out reverse;
-            bottom: 15%; right: 10%;
-        }
-
-        @keyframes floatSparkles {
-            0%, 100% { transform: translateY(0) scale(1); opacity: 0.2; }
-            50% { transform: translateY(-20px) scale(1.2); opacity: 0.5; }
-        }
-
-        /* --- CONTENEUR SMARTPHONE --- */
-        .app-container {
+        /* --- COUVERTURE IMMERSIVE (HERO) --- */
+        .hero-section {
             width: 100%;
-            max-width: 440px;
-            min-height: 100vh;
-            padding: 25px 20px 100px 20px;
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, rgba(244,230,228,0.6) 0%, rgba(253,250,249,1) 100%);
             position: relative;
         }
 
-        /* --- HEADER PRINCIPAL --- */
-        .main-header {
+        .studio-brand {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--color-muted);
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-family: var(--font-editorial);
+            font-size: clamp(2.8rem, 8vw, 5.5rem);
+            font-weight: 400;
+            line-height: 1.1;
+            color: var(--color-dark);
+            max-width: 900px;
+            margin-bottom: 30px;
+        }
+
+        .hero-title i {
+            font-family: var(--font-editorial);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--color-muted);
+            max-width: 550px;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- BOUTONS PRESTIGE --- */
+        .btn-prestige {
+            display: inline-block;
+            background-color: var(--color-dark);
+            color: var(--color-white);
+            text-decoration: none;
+            padding: 18px 45px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            border: 1px solid var(--color-dark);
+            transition: var(--transition-chic);
+            cursor: pointer;
+        }
+
+        .btn-prestige:hover {
+            background-color: transparent;
+            color: var(--color-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-dark);
+            border: 1px solid var(--color-pink-accent);
+            margin-left: 10px;
+        }
+        .btn-secondary:hover {
+            background-color: var(--color-nude);
+            border-color: var(--color-nude);
+        }
+
+        /* --- SECTIONS TEXTURÉES --- */
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        .section-header {
             text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-meta {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--color-muted);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: var(--font-editorial);
+            font-size: 2.5rem;
+            font-weight: 400;
+        }
+
+        /* --- GRILLE DES PRESTATIONS VISUELLES --- */
+        .poses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        @media(max-width: 768px) {
+            .poses-grid { grid-template-columns: 1fr; }
+            .btn-secondary { margin-left: 0; margin-top: 15px; width: 100%; text-align: center;}
+            .btn-prestige { width: 100%; text-align: center; }
+        }
+
+        .pose-item {
+            background-color: var(--color-white);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: var(--transition-chic);
+        }
+
+        .pose-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(26,26,26,0.05);
+        }
+
+        .pose-image-box {
+            width: 100%;
+            height: 450px; /* Grandes images immersives */
+            overflow: hidden;
+            position: relative;
+            background-color: #f0f0f0;
+        }
+
+        .pose-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .pose-item:hover .pose-image-box img {
+            transform: scale(1.05);
+        }
+
+        .pose-price-tag {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: var(--color-white);
+            color: var(--color-dark);
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 10px 20px;
+            letter-spacing: 1px;
+        }
+
+        .pose-content {
+            padding: 30px;
+        }
+
+        .pose-item-title {
+            font-family: var(--font-editorial);
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .pose-item-desc {
+            font-size: 0.88rem;
+            color: var(--color-muted);
+            line-height: 1.6;
+            font-weight: 300;
             margin-bottom: 25px;
         }
 
-        .avatar-wrapper {
-            position: relative;
-            width: 110px;
-            height: 110px;
-            margin: 0 auto 15px auto;
-        }
-
-        .avatar-wrapper::before {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--hot-pink), var(--gold));
-            animation: rotateGlow 4s linear infinite;
-        }
-
-        @keyframes rotateGlow { 100% { transform: rotate(360deg); } }
-
-        .avatar-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            position: relative;
-            z-index: 2;
-            border: 4px solid var(--white);
-        }
-
-        .pulse-badge {
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            background: #4ade80;
-            color: white;
-            font-size: 0.65rem;
-            font-weight: 700;
-            padding: 3px 8px;
-            border-radius: 20px;
-            z-index: 3;
-            border: 2px solid var(--white);
-            text-transform: uppercase;
-            box-shadow: 0 0 10px #4ade80;
-            animation: pulseGreen 2s infinite;
-        }
-
-        @keyframes pulseGreen {
-            0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
-            70% { box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
-        }
-
-        .studio-name {
-            font-family: var(--font-round);
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 4px;
-        }
-
-        .studio-tagline {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            letter-spacing: 0.5px;
-        }
-
-        /* --- PAGES DU SITE --- */
-        .page-view {
-            display: none;
-            animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        .page-view.active { display: block; }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- PAGE ACCUEIL --- */
-        .glass-card {
-            background: var(--card-glass);
-            border-radius: var(--radius-main);
-            padding: 24px;
-            box-shadow: var(--shadow-girly);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            margin-bottom: 20px;
+        /* --- SECTION ENGAGEMENTS & ACOMPTE --- */
+        .policy-banner {
+            background-color: var(--color-nude);
+            padding: 60px 40px;
             text-align: center;
+            max-width: 800px;
+            margin: 40px auto;
+            border-radius: 2px;
         }
 
-        .welcome-text {
-            font-size: 0.92rem;
-            line-height: 1.6;
-            color: var(--text-main);
+        .policy-title {
+            font-family: var(--font-editorial);
+            font-size: 1.8rem;
             margin-bottom: 15px;
+            font-weight: 400;
         }
 
-        .btn-booking {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: var(--hot-pink);
-            color: var(--white);
-            text-decoration: none;
-            padding: 18px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-family: var(--font-round);
-            font-size: 1.05rem;
-            box-shadow: 0 8px 25px rgba(255, 107, 139, 0.4);
-            transition: all 0.3s ease;
-            margin-bottom: 20px;
-            border: none;
-            width: 100%;
-            cursor: pointer;
-        }
-
-        .btn-booking:hover {
-            transform: scale(1.03);
-            background: #ff5276;
-            box-shadow: 0 10px 30px rgba(255, 107, 139, 0.5);
-        }
-
-        /* --- INFO ACOMPTE --- */
-        .acompte-box {
-            background: #fff0f2;
-            border-left: 4px solid var(--hot-pink);
-            padding: 12px 15px;
-            border-radius: 12px;
-            text-align: left;
-            font-size: 0.8rem;
-            margin-top: 15px;
-            color: #7a4b53;
-        }
-
-        .acompte-box strong { color: var(--hot-pink); }
-
-        /* --- CARTE DES POSES (SERVICES) --- */
-        .pose-card {
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 211, 218, 0.4);
-            transition: transform 0.3s ease;
-        }
-
-        .pose-card:hover { transform: translateY(-4px); }
-
-        .pose-img-container {
-            width: 100%;
-            height: 180px;
-            position: relative;
-            background: #eee;
-        }
-
-        .pose-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .pose-price {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--hot-pink);
-            color: var(--white);
-            font-weight: 700;
-            font-family: var(--font-round);
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 10px rgba(255, 107, 139, 0.3);
-        }
-
-        .pose-info {
-            padding: 20px;
-        }
-
-        .pose-title {
-            font-family: var(--font-round);
-            font-size: 1.15rem;
-            color: var(--text-main);
-            margin-bottom: 6px;
-        }
-
-        .pose-desc {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
-
-        /* --- SECTION COMPTE À REBOURS / POPUP RÉSERVATION SIMULÉE --- */
-        .modal-booking-info {
-            text-align: left;
-        }
-        .modal-booking-info h3 {
-            font-family: var(--font-round);
-            margin-bottom: 10px;
-            color: var(--hot-pink);
-        }
-        .modal-booking-info ul {
-            margin-left: 18px;
-            font-size: 0.85rem;
+        .policy-text {
+            font-size: 0.9rem;
+            color: var(--color-dark);
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+            font-weight: 300;
             line-height: 1.7;
-            margin-bottom: 15px;
         }
 
-        /* --- ESPACE SECRET VIP --- */
-        .secret-lock-container {
-            padding: 20px 10px;
-        }
-        .secret-input {
-            width: 100%;
-            padding: 14px;
-            border: 2px solid var(--soft-pink);
-            border-radius: 14px;
-            outline: none;
+        /* --- ESPACE PRIVÉ VIP --- */
+        .secret-wrapper {
+            max-width: 550px;
+            margin: 0 auto;
+            background: var(--color-white);
+            border: 1px solid rgba(0,0,0,0.06);
+            padding: 45px 35px;
             text-align: center;
-            font-size: 1rem;
-            margin-bottom: 15px;
-            font-family: var(--font-base);
-            color: var(--text-main);
-            background: #fffcfc;
         }
-        .secret-input:focus { border-color: var(--hot-pink); }
-        
-        .secret-content-box {
-            display: none;
-            background: linear-gradient(135deg, #fff6f7 0%, #ffe4e8 100%);
-            border: 2px dashed var(--hot-pink);
-            border-radius: 16px;
-            padding: 20px;
-            margin-top: 15px;
-        }
-        .secret-content-box.unlocked { display: block; }
 
-        /* --- BARRE DE NAVIGATION FLOTTANTE --- */
-        .nav-bar {
+        .secret-input-field {
+            width: 100%;
+            padding: 18px;
+            border: 1px solid #e5e5e5;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            outline: none;
+            letter-spacing: 2px;
+            text-align: center;
+            transition: var(--transition-chic);
+        }
+
+        .secret-input-field:focus {
+            border-color: var(--color-dark);
+        }
+
+        .secret-revealed-panel {
+            display: none;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px dashed var(--color-pink-accent);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+
+        /* --- SYSTEM INTERACTIF SPA (NAVIGATION) --- */
+        .main-navigation-bar {
             position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: calc(100% - 40px);
-            max-width: 400px;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 25px;
-            padding: 12px 10px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(253, 250, 249, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.03);
             display: flex;
-            justify-content: space-around;
-            box-shadow: 0 10px 35px rgba(255, 107, 139, 0.15);
-            border: 1px solid rgba(255,255,255,0.6);
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
             z-index: 9999;
         }
 
-        .nav-btn {
-            background: transparent;
-            border: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            color: var(--text-muted);
-            cursor: pointer;
-            font-family: var(--font-base);
-            font-size: 0.62rem;
-            font-weight: 700;
+        .nav-logo {
+            font-family: var(--font-editorial);
+            font-size: 1.3rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.25s ease;
-            padding: 6px 12px;
-            border-radius: 14px;
+            font-weight: 600;
         }
 
-        .nav-btn span.icon { font-size: 1.2rem; }
+        .nav-links-group {
+            display: flex;
+            gap: 30px;
+        }
 
-        .nav-btn.active {
-            color: var(--hot-pink);
-            background: #fff0f2;
+        .nav-link-item {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: var(--color-dark);
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link-item:hover, .nav-link-item.active-nav {
+            color: var(--color-pink-accent);
+        }
+
+        .view-panel {
+            display: none;
+            padding-top: 80px; /* Clearance pour la barre de navigation fixe */
+        }
+
+        .view-panel.active-panel {
+            display: block;
         }
     </style>
 </head>
 <body>
 
-    <div class="app-container">
-        
-        <!-- En-tête de l'Institut -->
-        <header class="main-header">
-            <div class="avatar-wrapper">
-                <!-- Remplacer par ta photo de profil ou logo -->
-                <img class="avatar-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=250&q=80" alt="Lash Tech">
-                <span class="pulse-badge">Dispo</span>
-            </div>
-            <h1 class="studio-name">Lash Room Coquette 🌸</h1>
-            <p class="studio-tagline">✨ Sublimation du Regard de Poupée • Paris 16e</p>
-        </header>
-
-        <!-- ================= PAGE 1 : STUDIO ACCUEIL ================= -->
-        <div id="home" class="page-view active">
-            <div class="glass-card">
-                <p class="welcome-text">
-                    Bienvenue dans ton temple du regard ma belle ! Je m'appelle Célia, ton experte Lash Artist. Ici, on crée des poses sur-mesure adaptées à tes yeux pour te donner un look de reine. 👑
-                </p>
-                <button class="btn-booking" onclick="switchPage('booking')">🗓️ PRENDRE RENDEZ-VOUS</button>
-                
-                <div class="acompte-box">
-                    ⚠️ <strong>Règle d'or :</strong> Un acompte de <strong>20€</strong> est requis pour valider toute réservation en ligne. Le montant restant (30€) sera à régler sur place.
-                </div>
-            </div>
-
-            <!-- Liens Directs Utiles -->
-            <button class="btn-booking" style="background: var(--white); color: var(--text-main); box-shadow: none; border: 1px solid var(--soft-pink);" onclick="switchPage('poses')">📜 Découvrir nos Poses & Tarifs</button>
+    <!-- Barre de Navigation de Grande Marque -->
+    <nav class="main-navigation-bar">
+        <div class="nav-logo">Wiss Glam Studio</div>
+        <div class="nav-links-group">
+            <span class="nav-link-item active-nav" onclick="navigateTo('panel-home', this)">Studio</span>
+            <span class="nav-link-item" onclick="navigateTo('panel-menu', this)">Les Poses</span>
+            <span class="nav-link-item" onclick="navigateTo('panel-booking', this)">Réservations</span>
+            <span class="nav-link-item" onclick="navigateTo('panel-vip', this)">Espace Privé</span>
         </div>
+    </nav>
 
-        <!-- ================= PAGE 2 : LES POSES & TARIFS ================= -->
-        <div id="poses" class="page-view">
-            <!-- Pose 1 : Cil à cil -->
-            <div class="pose-card">
-                <div class="pose-img-container">
-                    <img class="pose-img" src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=400&q=80" alt="Pose Cil à cil">
-                    <span class="pose-price">50 €</span>
-                </div>
-                <div class="pose-info">
-                    <h3 class="pose-title">Pose Cil à Cil • Effet Mascara</h3>
-                    <p class="pose-desc">Une extension est posée sur chacun de vos cils naturels. Parfait pour un rendu propre, élégant, noir intense, tout en restant hyper naturel.</p>
-                    <button class="btn-booking" style="padding: 10px 15px; font-size: 0.85rem;" onclick="switchPage('booking')">Choisir cette pose 💖</button>
-                </div>
+    <!-- ================= SECTION ACCUEIL ÉDITORIALE ================= -->
+    <div id="panel-home" class="view-panel active-panel">
+        <section class="hero-section">
+            <span class="studio-brand">Wiss Glam Studio</span>
+            <h2 class="hero-title">Sublimer votre regard n'est pas un soin, c'est un <i>art signature</i>.</h2>
+            <p class="hero-subtitle">Créations exclusives d'extensions de cils haute précision. Une architecture du regard pensée sur mesure pour révéler votre intensité naturelle.</p>
+            <div>
+                <button class="btn-prestige" onclick="document.querySelector('[onclick*=\'panel-menu\']').click()">Découvrir la carte</button>
+                <button class="btn-prestige btn-secondary" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Prendre Rendez-vous</button>
             </div>
-
-            <!-- Pose 2 : Wispy -->
-            <div class="pose-card">
-                <div class="pose-img-container">
-                    <img class="pose-img" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=400&q=80" alt="Pose Wispy Kim K">
-                    <span class="pose-price">50 €</span>
-                </div>
-                <div class="pose-info">
-                    <h3 class="pose-title">Pose Wispy • Effet Kim K</h3>
-                    <p class="pose-desc">Le look star par excellence. Alternance de longueurs courtes et de "spikes" (pointes plus longues) pour un effet texturé, déstructuré et ultra glamour.</p>
-                    <button class="btn-booking" style="padding: 10px 15px; font-size: 0.85rem;" onclick="switchPage('booking')">Choisir cette pose 💖</button>
-                </div>
-            </div>
-
-            <!-- Pose 3 : Volume Russe -->
-            <div class="pose-card">
-                <div class="pose-img-container">
-                    <img class="pose-img" src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80" alt="Volume Russe">
-                    <span class="pose-price">50 €</span>
-                </div>
-                <div class="pose-info">
-                    <h3 class="pose-title">Volume Russe • Regard Intense</h3>
-                    <p class="pose-desc">Création de bouquets de cils faits main ultra-légers pour un effet de densité maximal, ultra-fourni et vaporeux. Idéal pour masquer les trous.</p>
-                    <button class="btn-booking" style="padding: 10px 15px; font-size: 0.85rem;" onclick="switchPage('booking')">Choisir cette pose 💖</button>
-                </div>
-            </div>
-
-            <!-- Pose 4 : Wet Look -->
-            <div class="pose-card">
-                <div class="pose-img-container">
-                    <img class="pose-img" src="https://images.unsplash.com/photo-1515688594390-b649af70d282?auto=format&fit=crop&w=400&q=80" alt="Wet Look">
-                    <span class="pose-price">50 €</span>
-                </div>
-                <div class="pose-info">
-                    <h3 class="pose-title">Pose Wet Look • Effet Mouillé</h3>
-                    <p class="pose-desc">Technique utilisant des bouquets fermés pour donner l’illusion parfaite de cils mouillés en sortant de la douche. Très tendance et brillant.</p>
-                    <button class="btn-booking" style="padding: 10px 15px; font-size: 0.85rem;" onclick="switchPage('booking')">Choisir cette pose 💖</button>
-                </div>
-            </div>
-
-            <!-- Pose 5 : Fox Eye -->
-            <div class="pose-card">
-                <div class="pose-img-container">
-                    <img class="pose-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Fox Eye">
-                    <span class="pose-price">50 €</span>
-                </div>
-                <div class="pose-info">
-                    <h3 class="pose-title">Pose Fox Eye • Regard Étiré</h3>
-                    <p class="pose-desc">Accentuation forte sur le coin externe de l’œil avec des courbures spécifiques pour étirer le regard et donner un effet "yeux de renard" ultra sensuel.</p>
-                    <button class="btn-booking" style="padding: 10px 15px; font-size: 0.85rem;" onclick="switchPage('booking')">Choisir cette pose 💖</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- ================= PAGE 3 : PRISE DE RENDEZ-VOUS ================= -->
-        <div id="booking" class="page-view">
-            <div class="glass-card modal-booking-info">
-                <h3>🗓️ Formulaire de Réservation</h3>
-                <p class="welcome-text" style="font-size: 0.82rem; margin-bottom: 15px;">
-                    Toutes nos poses de cils sont actuellement au tarif unique exceptionnel de <strong>50 €</strong> !
-                </p>
-                
-                <ul style="color: var(--text-muted);">
-                    <li>Étape 1 : Choisis ta pose préférée.</li>
-                    <li>Étape 2 : Paye l'acompte obligatoire sécurisé de 20 €.</li>
-                    <li>Étape 3 : Tu reçois ton SMS de confirmation avec l'adresse.</li>
-                </ul>
-
-                <!-- Remplacer l'URL ci-dessous par ton vrai lien Planity, Lydia, PayPal ou Calendly -->
-                <a href="https://www.planity.com" target="_blank" class="btn-booking" style="margin-bottom: 10px;">💳 PAYER L'ACOMPTE (20€) & BLOQUER MON RDV</a>
-                
-                <p style="font-size: 0.72rem; text-align: center; color: var(--text-muted); font-style: italic;">Plateforme de paiement sécurisée SSL protégeant vos données.</p>
-            </div>
-        </div>
-
-        <!-- ================= PAGE 4 : ACCÈS SECRET VIP ================= -->
-        <div id="secret" class="page-view">
-            <div class="glass-card secret-lock-container">
-                <h2 style="font-family: var(--font-round); font-size: 1.3rem; margin-bottom: 10px;">🤫 Espace Privé VIP</h2>
-                <p class="welcome-text" style="font-size: 0.82rem;">Entre le mot de passe secret réservé aux clientes régulières pour débloquer les offres exclusives cachées.</p>
-                
-                <!-- Mot de passe par défaut : LASHQUEEN12 -->
-                <input type="password" id="secretPassword" class="secret-input" placeholder="Entrez le code secret...">
-                <button class="btn-booking" onclick="checkSecretPassword()">Débloquer l'Espace ✨</button>
-
-                <!-- Zone de contenu secret masquée au départ -->
-                <div id="secretContent" class="secret-content-box">
-                    <h4 style="color: var(--hot-pink); margin-bottom: 8px; font-family: var(--font-round);">🎉 Félicitations ma VIP !</h4>
-                    <p style="font-size: 0.8rem; line-height: 1.5; margin-bottom: 10px; text-align: left;">
-                        Voici tes privilèges exclusifs pour ce mois-ci :
-                    </p>
-                    <div style="background: var(--white); padding: 10px; border-radius: 8px; font-weight: bold; font-size: 0.85rem; margin-bottom: 8px; color: var(--gold);">
-                        🎁 CODE : VIPLASHES (-5€ sur ton prochain acompte)
-                    </div>
-                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: left;">⚡ Créneaux d'urgence de dernière minute disponibles ce samedi sur demande WhatsApp uniquement !</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- BARRE DE NAVIGATION APPLICATIVE FLOTTANTE -->
-        <nav class="nav-bar">
-            <button class="nav-btn active" onclick="switchPage('home', this)">
-                <span class="icon">🏠</span>
-                <span>Studio</span>
-            </button>
-            <button class="nav-btn" onclick="switchPage('poses', this)">
-                <span class="icon">📜</span>
-                <span>Poses</span>
-            </button>
-            <button class="nav-btn" onclick="switchPage('booking', this)">
-                <span class="icon">🗓️</span>
-                <span>Rendez-vous</span>
-            </button>
-            <button class="nav-btn" onclick="switchPage('secret', this)">
-                <span class="icon">🤫</span>
-                <span>Secret VIP</span>
-            </button>
-        </nav>
-
+        </section>
     </div>
 
-    <!-- LOGIQUE JAVASCRIPT LOGICIELLE DE L'APPLICATION -->
-    <script>
-        // Gestionnaire d'onglets pour le multi-page instantané
-        function switchPage(pageId, navButton) {
-            // Désactiver toutes les pages
-            const pages = document.querySelectorAll('.page-view');
-            pages.forEach(page => page.classList.remove('active'));
+    <!-- ================= SECTION CARTE DES POSES VISUELLES ================= -->
+    <div id="panel-menu" class="view-panel">
+        <section class="section-container">
+            <div class="section-header">
+                <span class="section-meta">Menu des Prestations</span>
+                <h3 class="section-title">Les Poses Signatures</h3>
+            </div>
 
-            // Activer la bonne page
-            const targetPage = document.getElementById(pageId);
-            if (targetPage) {
-                targetPage.classList.add('active');
+            <div class="poses-grid">
+                <!-- Pose 1 -->
+                <div class="pose-item">
+                    <div class="pose-image-box">
+                        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80" alt="Pose Cil à Cil">
+                        <div class="pose-price-tag">50 €</div>
+                    </div>
+                    <div class="pose-content">
+                        <h4 class="pose-item-title">Le Cil à Cil • Clémence Absolue</h4>
+                        <p class="pose-item-desc">Une technique pure consistant à appliquer une extension unique en soie sur chaque cil naturel. Idéal pour celles qui recherchent un effet mascara haut de gamme, sans compromis sur le naturel.</p>
+                        <button class="btn-prestige" style="padding: 12px 30px; width: 100%;" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Sélectionner cette création</button>
+                    </div>
+                </div>
+
+                <!-- Pose 2 -->
+                <div class="pose-item">
+                    <div class="pose-image-box">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Pose Wispy">
+                        <div class="pose-price-tag">50 €</div>
+                    </div>
+                    <div class="pose-content">
+                        <h4 class="pose-item-title">Le Wispy • Effet Kim K</h4>
+                        <p class="pose-item-desc">Un design déstructuré très éditorial. Nous alternons différentes longueurs et des pointes denses ("spikes") pour créer un effet vaporeux, texturé et follement glamour.</p>
+                        <button class="btn-prestige" style="padding: 12px 30px; width: 100%;" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Sélectionner cette création</button>
+                    </div>
+                </div>
+
+                <!-- Pose 3 -->
+                <div class="pose-item">
+                    <div class="pose-image-box">
+                        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80" alt="Volume Russe">
+                        <div class="pose-price-tag">50 €</div>
+                    </div>
+                    <div class="pose-content">
+                        <h4 class="pose-item-title">Le Volume Russe • Densité Couture</h4>
+                        <p class="pose-item-desc">Création méticuleuse de bouquets de cils ultra-fins et légers appliqués sur un seul cil. Apporte un volume spectaculaire, un fini ultra-noir et un toucher de velours soyeux.</p>
+                        <button class="btn-prestige" style="padding: 12px 30px; width: 100%;" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Sélectionner cette création</button>
+                    </div>
+                </div>
+
+                <!-- Pose 4 -->
+                <div class="pose-item">
+                    <div class="pose-image-box">
+                        <img src="https://images.unsplash.com/photo-1515688594390-b649af70d282?auto=format&fit=crop&w=600&q=80" alt="Wet Look">
+                        <div class="pose-price-tag">50 €</div>
+                    </div>
+                    <div class="pose-content">
+                        <h4 class="pose-item-title">Le Wet Look • Glossy Effect</h4>
+                        <p class="pose-item-desc">Inspirée des tendances des défilés, cette pose utilise des bouquets volontairement fermés pour imiter à la perfection l'esthétique de cils mouillés. Le rendu est brillant, frais et audacieux.</p>
+                        <button class="btn-prestige" style="padding: 12px 30px; width: 100%;" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Sélectionner cette création</button>
+                    </div>
+                </div>
+
+                <!-- Pose 5 -->
+                <div class="pose-item">
+                    <div class="pose-image-box">
+                        <img src="https://images.unsplash.com/photo-1632345031435-8797b2d58045?auto=format&fit=crop&w=600&q=80" alt="Fox Eye">
+                        <div class="pose-price-tag">50 €</div>
+                    </div>
+                    <div class="pose-content">
+                        <h4 class="pose-item-title">Le Fox Eye • Courbure Étirée</h4>
+                        <p class="pose-item-desc">Une architecture fluide concentrant la longueur et l'orientation des cils vers le coin externe. Idéal pour lifter optiquement l'œil et obtenir un regard félin captivant.</p>
+                        <button class="btn-prestige" style="padding: 12px 30px; width: 100%;" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Sélectionner cette création</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= SECTION RÉSERVATION & ACOMPTE ================= -->
+    <div id="panel-booking" class="view-panel">
+        <section class="section-container" style="max-width: 900px;">
+            <div class="section-header">
+                <span class="section-meta">Réservation Sécurisée</span>
+                <h3 class="section-title">Planifier Votre Séance</h3>
+            </div>
+
+            <div class="policy-banner">
+                <h4 class="policy-title">Conditions de Réservation</h4>
+                <p class="policy-text">
+                    Afin de garantir l'exclusivité de votre créneau au studio, un acompte de <strong>20 €</strong> est requis lors de votre blocage en ligne. Le solde restant de <strong>30 €</strong> sera à régler directement au studio le jour de votre pose.
+                </p>
+                <!-- Remplace le lien ci-dessous par ton lien Stripe, Planity ou PayPal -->
+                <a href="https://www.planity.com" target="_blank" class="btn-prestige">Bloquer mon créneau & Régler l'acompte</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= SECTION ESPACE PRIVÉ VIP ================= -->
+    <div id="panel-vip" class="view-panel">
+        <section class="section-container">
+            <div class="section-header">
+                <span class="section-meta">Accès Restreint</span>
+                <h3 class="section-title">The Private Lounge</h3>
+            </div>
+
+            <div class="secret-wrapper">
+                <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--color-muted); margin-bottom: 25px;">Espace réservé aux membres privilèges</p>
+                <input type="password" id="vipCodeField" class="secret-input-field" placeholder="ENTREZ VOTRE CODE SECRET">
+                <button class="btn-prestige" style="width: 100%;" onclick="validateVipCode()">S'authentifier</button>
+
+                <!-- Panel révélé si code OK -->
+                <div id="vipSecretContent" class="secret-revealed-panel">
+                    <h5 style="font-family: var(--font-editorial); font-size: 1.5rem; margin-bottom: 10px;">Accès Autorisé</h5>
+                    <p style="font-size: 0.85rem; color: var(--color-muted); margin-bottom: 20px; font-weight: 300;">Profitez de vos avantages exclusifs pour ce mois-ci :</p>
+                    <div style="background-color: var(--color-bg); padding: 15px; font-weight: 600; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 15px; border: 1px solid var(--color-pink-accent);">
+                        CODE : GLAMVIP5
+                    </div>
+                    <p style="font-size: 0.75rem; color: var(--color-muted); font-style: italic;">Priorité absolue sur les désistements de dernière minute via la ligne privée.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- LOGIQUE LOGICIELLE DE TRANSITION INTERNE (SPA) -->
+    <script>
+        function navigateTo(panelId, clickTarget) {
+            // Masquer tous les panneaux de contenu
+            const panels = document.querySelectorAll('.view-panel');
+            panels.forEach(panel => panel.classList.remove('active-panel'));
+
+            // Afficher le panneau demandé
+            const activePanel = document.getElementById(panelId);
+            if (activePanel) {
+                activePanel.classList.add('active-panel');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            // Mettre à jour l'état de la barre de navigation
-            const buttons = document.querySelectorAll('.nav-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-
-            if (navButton) {
-                navButton.classList.add('active');
-            } else {
-                // Si la transition vient d'un bouton interne (ex: Accueil -> Poses), on force l'icône de nav correspondante
-                buttons.forEach(btn => {
-                    if (btn.getAttribute('onclick').includes(pageId)) {
-                        btn.classList.add('active');
-                    }
-                });
-            }
+            // Mettre à jour le focus visuel de la navigation supérieure
+            const navItems = document.querySelectorAll('.nav-link-item');
+            navItems.forEach(item => item.classList.remove('active-nav'));
+            clickTarget.classList.add('active-nav');
         }
 
-        // Système de vérification du mot de passe secret
-        function checkSecretPassword() {
-            const input = document.getElementById('secretPassword').value;
-            const contentBox = document.getElementById('secretContent');
-            
-            // Le mot de passe ici est LASHQUEEN12 (Modifiable par ce que tu veux)
-            if (input.trim().toUpperCase() === "LASHQUEEN12") {
-                contentBox.classList.add('unlocked');
-                alert("✨ Bienvenue princesse ! Accès VIP accordé.");
+        function validateVipCode() {
+            const inputCode = document.getElementById('vipCodeField').value;
+            const secretBox = document.getElementById('vipSecretContent');
+
+            if (inputCode.trim().toUpperCase() === "LASHQUEEN12") {
+                secretBox.style.display = "block";
+                alert("Authentification réussie. Bienvenue dans votre espace.");
             } else {
-                alert("❌ Code incorrect... Demande-le à ta Lash Tech préférée lors de ton prochain rendez-vous !");
-                contentBox.classList.remove('unlocked');
+                alert("Code d'accès invalide.");
+                secretBox.style.display = "none";
             }
         }
     </script>
