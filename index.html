@@ -129,7 +129,7 @@
             width: 100%;
         }
 
-        /* --- NAVIGATION ACTIONS (SPA VRAI MOUVEMENT) --- */
+        /* --- NAVIGATION ACTIONS --- */
         .panel-view {
             display: none;
             width: 100%;
@@ -146,7 +146,7 @@
             transform: translateY(0);
         }
 
-        /* --- ACCUEIL EDITORIAL STYLE MAGAZINE --- */
+        /* --- ACCUEIL STYLE MAGAZINE ÉDITORIAL --- */
         .hero-split {
             display: flex;
             width: 100%;
@@ -181,30 +181,23 @@
             margin-bottom: 40px;
         }
 
-        .hero-video-side {
+        .hero-image-side {
             width: 55%;
             position: relative;
             overflow: hidden;
             background-color: var(--bg-offwhite);
         }
 
-        .hero-video-side video {
+        .hero-image-side img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(15%);
-            transition: transform 2s ease;
+            filter: grayscale(100%) contrast(110%);
+            transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        .hero-video-side:hover video {
-            transform: scale(1.03);
-        }
-
-        /* Fallback image au cas où la vidéo met du temps à charger */
-        .hero-video-side {
-            background-image: url('https://images.unsplash.com/photo-1583001931096-959e9a1a54ea?q=80&w=1000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
+        .hero-image-side:hover img {
+            transform: scale(1.04);
         }
 
         /* --- BOUTONS ÉPURÉS (LIGNE TECHNIQUE) --- */
@@ -345,7 +338,7 @@
             font-weight: 300;
         }
 
-        /* --- COMPARTIMENT VIP MINIMALISTE --- */
+        /* --- COMPARTIMENT VIP --- */
         .vip-box {
             max-width: 450px;
             margin: 15vh auto;
@@ -386,14 +379,14 @@
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* --- COMPATIBILITÉ SÉCURISÉE MOBILE --- */
+        /* --- COMPATIBILITÉ MOBILE --- */
         @media(max-width: 992px) {
             .navbar-full { padding: 25px 24px; }
             .nav-menu { gap: 20px; }
             .hero-split { flex-direction: column-reverse; height: auto; gap: 40px; }
-            .hero-text-side, .hero-video-side { width: 100%; }
+            .hero-text-side, .hero-image-side { width: 100%; }
             .hero-text-side { padding: 40px 0; }
-            .hero-video-side { height: 45vh; }
+            .hero-image-side { height: 45vh; }
             .showcase-row, .showcase-row:nth-child(even) { flex-direction: column; gap: 30px; margin-bottom: 80px; }
             .showcase-img-box, .showcase-text-box { width: 100%; }
             .showcase-img-box { height: 45vh; }
@@ -405,12 +398,12 @@
 </head>
 <body>
 
-    <!-- RIDEAU NOIR MINIMALISTE -->
+    <!-- RIDEAU NOIR D'ENTRÉE -->
     <div id="preloader">
         <h1 class="preloader-title">WISS GLAM STUDIO</h1>
     </div>
 
-    <!-- NAVBAR FONTES DROITES -->
+    <!-- NAVBAR LUXE -->
     <nav class="navbar-full">
         <div class="nav-brand" onclick="document.querySelector('[onclick*=\'panel-home\']').click()">
             WISS GLAM STUDIO
@@ -423,7 +416,7 @@
         </div>
     </nav>
 
-    <!-- ================= ACCUEIL MOUVEMENT VIDÉO VOGUE/ZARA ================= -->
+    <!-- ================= ACCUEIL AVEC ILLUSTRATION ÉDITORIALE ================= -->
     <div id="panel-home" class="panel-view active-panel">
         <section class="hero-split">
             <div class="hero-text-side">
@@ -434,20 +427,18 @@
                     <button class="btn-zara btn-zara-outline" onclick="document.querySelector('[onclick*=\'panel-booking\']').click()">Réserver</button>
                 </div>
             </div>
-            <div class="hero-video-side">
-                <!-- Si tu ajoutes accueil.mp4 sur ton GitHub, elle remplacera automatiquement la photo de fond -->
-                <video autoplay loop muted playsinline>
-                    <source src="accueil.mp4" type="video/mp4">
-                </video>
+            <!-- Illustration Éditoriale Moderne en Noir & Blanc (Gros plan cil à cil artistique) -->
+            <div class="hero-image-side">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1200&auto=format&fit=crop" alt="Wiss Glam Studio Editorial Concept">
             </div>
         </section>
     </div>
 
-    <!-- ================= PRESTATIONS ASYMÉTRIQUES HAUTE COUTURE ================= -->
+    <!-- ================= PRESTATIONS ASYMÉTRIQUES ================= -->
     <div id="panel-catalog" class="panel-view">
         <div class="showcase-container">
             
-            <!-- Pose 1 : CIL À CIL (Image : Gros plan cil à cil impeccable) -->
+            <!-- Pose 1 : CIL À CIL -->
             <div class="showcase-row">
                 <div class="showcase-img-box">
                     <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1200&auto=format&fit=crop" alt="Lash design Cil à cil professionnel">
@@ -463,10 +454,10 @@
                 </div>
             </div>
 
-            <!-- Pose 2 : WISPY (Image : Pose texturée longs/courts volumineux) -->
+            <!-- Pose 2 : WISPY -->
             <div class="showcase-row">
                 <div class="showcase-img-box">
-                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1200&auto=format&fit=crop" alt="Lash design Wispy extensions yeux">
+                    <img src="https://images.unsplash.com/photo-1583001931096-959e9a1a54ea?q=80&w=1200&auto=format&fit=crop" alt="Lash design Wispy extensions yeux">
                 </div>
                 <div class="showcase-text-box">
                     <span class="item-num">N°02</span>
@@ -479,7 +470,7 @@
                 </div>
             </div>
 
-            <!-- Pose 3 : VOLUME RUSSE (Image : Regard intense avec brossage de cils denses) -->
+            <!-- Pose 3 : VOLUME RUSSE -->
             <div class="showcase-row">
                 <div class="showcase-img-box">
                     <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1200&auto=format&fit=crop" alt="Lash design Volume russe dense application">
@@ -495,7 +486,7 @@
                 </div>
             </div>
 
-            <!-- Pose 4 : WET LOOK (Image : Gros plan oeil extensions cils brillants nets) -->
+            <!-- Pose 4 : WET LOOK -->
             <div class="showcase-row">
                 <div class="showcase-img-box">
                     <img src="https://images.unsplash.com/photo-1515688594390-b649af70d282?q=80&w=1200&auto=format&fit=crop" alt="Lash design Wet look effet brillant extensions">
@@ -511,10 +502,10 @@
                 </div>
             </div>
 
-            <!-- Pose 5 : FOX EYE (Image : Zoom sur oeil étiré maquillage/cils foxy) -->
+            <!-- Pose 5 : FOX EYE (Image Fixée avec Regard Graphique Étiré) -->
             <div class="showcase-row">
                 <div class="showcase-img-box">
-                    <img src="https://images.unsplash.com/photo-1632345031435-8797b2d58045?q=80&w=1200&auto=format&fit=crop" alt="Lash design Fox eye étiré regard">
+                    <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1200&auto=format&fit=crop" alt="Lash design Fox eye étiré regard de profil">
                 </div>
                 <div class="showcase-text-box">
                     <span class="item-num">N°05</span>
@@ -530,7 +521,7 @@
         </div>
     </div>
 
-    <!-- ================= RÉSERVATIONS NETS ET CLAIRES ================= -->
+    <!-- ================= RÉSERVATIONS ================= -->
     <div id="panel-booking" class="panel-view">
         <section class="booking-section">
             <h3 class="booking-title">Plannings & Sessions</h3>
@@ -558,7 +549,7 @@
         </div>
     </div>
 
-    <!-- LOGIQUE DE TRANSITION ULTRA FLUIDE -->
+    <!-- LOGIQUE DE TRANSITION -->
     <script>
         // Rideau d'entrée
         window.addEventListener('DOMContentLoaded', () => {
@@ -568,7 +559,7 @@
             }, 1000); 
         });
 
-        // Changement de panel en fondu + glissement
+        // Changement de panel en fondu
         function changePanel(panelId, currentElement) {
             const currentActive = document.querySelector('.panel-view.active-panel');
             const targetPanel = document.getElementById(panelId);
@@ -595,7 +586,7 @@
             currentElement.classList.add('active-link');
         }
 
-        // Clé d'accès VIP (Code : LASHQUEEN12)
+        // Clé VIP (Code : LASHQUEEN12)
         function unlockLounge() {
             const keyValue = document.getElementById('loungeKey').value;
             const secretContainer = document.getElementById('loungeSecretArea');
